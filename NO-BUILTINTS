@@ -1,0 +1,18 @@
+standard and built isis not the say for who interchangle use those words
+standard libreary is like same other normal libreary.
+but it is writen for most common things, whiich you are going to be use
+
+system leavel language are those language that it self dont lely on system
+interprited language are this why not consered as system language
+those language need os and other things to provide thair fundamantal features
+
+pre processing in c is not the full fundumantal thing, even it is not part of direct c
+and c dont include importing and exporting it self besause this section need fs to have for
+file navigations
+
+extern can be a controversal thing for system programming
+because in seen it loads from external files but that is
+not true, because extran also works for static builds where every thing get packed
+even shired evecutable formates are not fully executable and not fully object file
+
+include, import, import and export?

@@ -1,0 +1,5 @@
+src/build/*.o
+src/build/*.a
+src/*.o
+src/python
+.vscode/settings.json

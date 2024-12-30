@@ -1,0 +1,1 @@
+#define E_INT "interrupted!"

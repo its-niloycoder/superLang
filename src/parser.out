@@ -1,0 +1,167 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> declaration statement
+Rule 2     declaration -> TYPE COLON NUMBER IDENTIFIER EQUALS NUMBER SEMICOLON
+Rule 3     statement -> FUNC_CALL LPAREN FUNC_CALL LPAREN IDENTIFIER RPAREN RPAREN SEMICOLON
+
+Terminals, with rules where they appear
+
+COLON                : 2
+EQUALS               : 2
+FUNC_CALL            : 3 3
+IDENTIFIER           : 2 3
+LPAREN               : 3 3
+NUMBER               : 2 2
+RPAREN               : 3 3
+SEMICOLON            : 2 3
+TYPE                 : 2
+error                : 
+
+Nonterminals, with rules where they appear
+
+declaration          : 1
+program              : 0
+statement            : 1
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . declaration statement
+    (2) declaration -> . TYPE COLON NUMBER IDENTIFIER EQUALS NUMBER SEMICOLON
+
+    TYPE            shift and go to state 3
+
+    program                        shift and go to state 1
+    declaration                    shift and go to state 2
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> declaration . statement
+    (3) statement -> . FUNC_CALL LPAREN FUNC_CALL LPAREN IDENTIFIER RPAREN RPAREN SEMICOLON
+
+    FUNC_CALL       shift and go to state 5
+
+    statement                      shift and go to state 4
+
+state 3
+
+    (2) declaration -> TYPE . COLON NUMBER IDENTIFIER EQUALS NUMBER SEMICOLON
+
+    COLON           shift and go to state 6
+
+
+state 4
+
+    (1) program -> declaration statement .
+
+    $end            reduce using rule 1 (program -> declaration statement .)
+
+
+state 5
+
+    (3) statement -> FUNC_CALL . LPAREN FUNC_CALL LPAREN IDENTIFIER RPAREN RPAREN SEMICOLON
+
+    LPAREN          shift and go to state 7
+
+
+state 6
+
+    (2) declaration -> TYPE COLON . NUMBER IDENTIFIER EQUALS NUMBER SEMICOLON
+
+    NUMBER          shift and go to state 8
+
+
+state 7
+
+    (3) statement -> FUNC_CALL LPAREN . FUNC_CALL LPAREN IDENTIFIER RPAREN RPAREN SEMICOLON
+
+    FUNC_CALL       shift and go to state 9
+
+
+state 8
+
+    (2) declaration -> TYPE COLON NUMBER . IDENTIFIER EQUALS NUMBER SEMICOLON
+
+    IDENTIFIER      shift and go to state 10
+
+
+state 9
+
+    (3) statement -> FUNC_CALL LPAREN FUNC_CALL . LPAREN IDENTIFIER RPAREN RPAREN SEMICOLON
+
+    LPAREN          shift and go to state 11
+
+
+state 10
+
+    (2) declaration -> TYPE COLON NUMBER IDENTIFIER . EQUALS NUMBER SEMICOLON
+
+    EQUALS          shift and go to state 12
+
+
+state 11
+
+    (3) statement -> FUNC_CALL LPAREN FUNC_CALL LPAREN . IDENTIFIER RPAREN RPAREN SEMICOLON
+
+    IDENTIFIER      shift and go to state 13
+
+
+state 12
+
+    (2) declaration -> TYPE COLON NUMBER IDENTIFIER EQUALS . NUMBER SEMICOLON
+
+    NUMBER          shift and go to state 14
+
+
+state 13
+
+    (3) statement -> FUNC_CALL LPAREN FUNC_CALL LPAREN IDENTIFIER . RPAREN RPAREN SEMICOLON
+
+    RPAREN          shift and go to state 15
+
+
+state 14
+
+    (2) declaration -> TYPE COLON NUMBER IDENTIFIER EQUALS NUMBER . SEMICOLON
+
+    SEMICOLON       shift and go to state 16
+
+
+state 15
+
+    (3) statement -> FUNC_CALL LPAREN FUNC_CALL LPAREN IDENTIFIER RPAREN . RPAREN SEMICOLON
+
+    RPAREN          shift and go to state 17
+
+
+state 16
+
+    (2) declaration -> TYPE COLON NUMBER IDENTIFIER EQUALS NUMBER SEMICOLON .
+
+    FUNC_CALL       reduce using rule 2 (declaration -> TYPE COLON NUMBER IDENTIFIER EQUALS NUMBER SEMICOLON .)
+
+
+state 17
+
+    (3) statement -> FUNC_CALL LPAREN FUNC_CALL LPAREN IDENTIFIER RPAREN RPAREN . SEMICOLON
+
+    SEMICOLON       shift and go to state 18
+
+
+state 18
+
+    (3) statement -> FUNC_CALL LPAREN FUNC_CALL LPAREN IDENTIFIER RPAREN RPAREN SEMICOLON .
+
+    $end            reduce using rule 3 (statement -> FUNC_CALL LPAREN FUNC_CALL LPAREN IDENTIFIER RPAREN RPAREN SEMICOLON .)
+

@@ -1,0 +1,7 @@
+u"Hello, Unicode \u2713"
+b"bytes \x42"
+r"Raw string with \n no escapes"
+42 0x2A 0b101010 0o52
+
+
+

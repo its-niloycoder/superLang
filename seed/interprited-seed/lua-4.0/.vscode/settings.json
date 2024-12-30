@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "stdio.h": "c",
+        "ldo.h": "c",
+        "nlang_err.h": "c",
+        "luadebug.h": "c"
+    }
+}

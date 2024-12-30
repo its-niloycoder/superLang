@@ -1,0 +1,8 @@
+python.org vs (cpython, jython, ironpython) builtin  vs standard libs (with and without tkinter)
+
+runtime = google, aws enverment
+? can we say a python docker container with preinstalled librearyes as runtime
+
+cpython repl, bpython 
+
+cython ~ superset
